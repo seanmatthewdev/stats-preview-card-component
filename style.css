@@ -1,0 +1,150 @@
+/* Root */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+:root {
+  --Verydarkblue-mainbackground: hsl(233, 47%, 7%);
+  --Darkdesaturatedblue-cardbackground: hsl(244, 38%, 16%);
+  --Softviolet-accent: hsl(277, 64%, 61%);
+  --White-mainheadingstats: hsl(0, 0%, 100%);
+  --Slightlytransparentwhite-mainparagraph: hsla(0, 0%, 100%, 0.75);
+  --Slightlytransparentwhite-statheadings: hsla(0, 0%, 100%, 0.6);
+  --Heading: "Inter", sans-serif;
+  --Body: "Lexend Deca", sans-seri;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--Verydarkblue-mainbackground);
+}
+/* Root */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* Card */
+.card {
+  display: flex;
+  width: 55vw;
+  background-color: var(--Darkdesaturatedblue-cardbackground);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+/* Card-left */
+.card-left {
+  width: 50%;
+  padding: 4rem;
+}
+
+.card-left h1 {
+  font-family: var(--Heading);
+  color: var(--White-mainheadingstats);
+  margin-bottom: 2rem;
+  padding-right: 2rem;
+}
+
+.card-left h1 span {
+  color: var(--Softviolet-accent);
+}
+
+.card-left .body {
+  color: var(--Slightlytransparentwhite-mainparagraph);
+  font-family: var(--Body);
+  margin-bottom: 4rem;
+  padding-right: 2rem;
+  line-height: 1.5;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2rem;
+}
+
+.stat h2 {
+  color: var(--White-mainheadingstats);
+  font-family: var(--Heading);
+  margin-bottom: 0.5rem;
+}
+
+.stat p {
+  color: var(--Slightlytransparentwhite-statheadings);
+  font-family: var(--Body);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* Card-left */
+
+/* Card right */
+.card-right {
+  background: url(./images/image-header-desktop.jpg) no-repeat;
+  background-size: cover;
+  height: auto;
+  width: 50%;
+  position: relative;
+}
+
+.card-right::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--Softviolet-accent);
+  opacity: 0.5;
+}
+/* Card right */
+
+/* Mobile */
+@media only screen and (max-width: 450px) {
+  main {
+    height: auto;
+  }
+  .card {
+    width: 90vw;
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+
+  .card-left {
+    order: 2;
+    height: 50%;
+    width: auto;
+    padding: 2rem;
+  }
+
+  .card-left h1 {
+    padding-right: 0;
+    text-align: center;
+    font-size: 1.75rem;
+  }
+
+  .card-left .body {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .stats {
+    padding-right: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .card-right {
+    order: 1;
+    height: 250px;
+    width: auto;
+  }
+}
+/* Mobile */
